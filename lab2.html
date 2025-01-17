@@ -1,35 +1,39 @@
-﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html><head></head><body>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lab2</title>
+</head>
 
-  
-    
-    
-    
-  
-  
+
+<body>
     <h1>JavaScript Practice</h1>
-     <div>
-      <ul></ul>
-	  
-     </div>
-     
-  
+    <ul id ="myList"></ul>
+    <button onclick= "deleteColor()">Delete one Color</button>
+    <button onclick= "deleteAllColors()">Delete All Colors</button>
+</body>
 
-<script type="module" src="https://s.brightspace.com/lib/bsi/2024.12.210/unbundled/mathjax.js"></script><script type="text/javascript">document.addEventListener('DOMContentLoaded', function() {
-						if (document.querySelector('math') || /\$\$|\\\(|\\\[|\\begin{|\\ref{|\\eqref{/.test(document.body.innerHTML)) {
-							document.querySelectorAll('mspace[linebreak="newline"]').forEach(elm => {
-								elm.setAttribute('style', 'display: block; height: 0.5rem;');
-							});
+    <script>
+        let list = document.getElementById("myList");
+        let colors = ["blue", "green", "red", "black", "orange", "indigo", "violet", "yellow", "white"];
+    
+        function deleteColor(){
+            const indexToDelete = colors.length-1;
+            colors.splice(indexToDelete,1);
+            console.clear();
+            for (i = 0; i < colors.length; ++i){
+                let li = document.createElement('li');
+                li.innerText=colors[i];
+                console.log(li)
+            }
+        }
+        function deleteAllColors(){
+            colors.length = 0;
+            console.log("No more colors.")   
+        }
+        
+    </script>
 
-							window.D2L.MathJax.loadMathJax({
-								outputScale: 1.5,
-								renderLatex: true,
-								enableMML3Support: false
-							});
-						}
-					});</script><script type="module" src="https://s.brightspace.com/lib/bsi/2024.12.210/unbundled/prism.js"></script><script type="text/javascript">document.addEventListener('DOMContentLoaded', function() {
-					document.querySelectorAll('.d2l-code').forEach(code => {
-						window.D2L.Prism.formatCodeElement(code);
-					});
-				});</script><script type="module" src="https://s.brightspace.com/lib/bsi/2024.12.210/unbundled/embeds.js"></script><script type="text/javascript">document.addEventListener('DOMContentLoaded', function() {
-					window.D2L.EmbedRenderer.renderEmbeds(document.body);
-				});</script></body></html>
+
+</html>
